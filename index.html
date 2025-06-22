@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>2hollis the Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="gameContainer">
+    <div id="mainMenu">
+      <h1 id="gameTitle">2hollis the game</h1>
+      <button id="playButton" class="button">PLAY</button>
+    </div>
+
+    <div id="gameArea">
+      <div class="stars" id="starsContainer"></div>
+      <div id="leftTrack" class="track"></div>
+      <div id="centerTrack" class="track"></div>
+      <div id="rightTrack" class="track"></div>
+
+      <div class="targetZone leftTarget"></div>
+      <div class="targetZone centerTarget"></div>
+      <div class="targetZone rightTarget"></div>
+
+      <div id="leftKey" class="key-hint">A</div>
+      <div id="centerKey" class="key-hint">S</div>
+      <div id="rightKey" class="key-hint">D</div>
+
+      <div id="score">SCORE: <span id="scoreValue">0</span></div>
+      <div id="combo">COMBO: <span id="comboValue">0</span>x</div>
+      <div id="audioStatus"></div>
+    </div>
+
+    <div id="endScreen">
+      <h2>GAME OVER</h2>
+      <div id="finalScore">0</div>
+      <button id="restartButton" class="button">PLAY AGAIN</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
