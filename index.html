@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="2hollis the Game - A rhythm-based beat tapping game">
+
+  <title>2hollis the Game</title>
+  <link rel="stylesheet" href="style.css" />
+  
+  <!-- Preload audio file -->
+  <link rel="preload" href="tune.mp3" as="audio">
+  
+  <!-- Prevent zoom on double-tap -->
+  <script>
+    document.addEventListener('touchmove', function(event) {
+      if (event.scale !== 1) {
+        event.preventDefault();
+      }
+    }, { passive: false });
+  </script>
+</head>
+<body>
+  <div id="gameContainer">
+    <!-- Main Menu Screen -->
+    <div id="mainMenu">
+      <h1 id="gameTitle">2hollis the game</h1>
+      <button id="playButton" class="button">PLAY</button>
+      <p style="font-size: 1rem; color: gray; text-align: center; max-width: 300px; margin: 0 auto;">
+        Tap "PLAY" to activate audio (required for mobile browsers)
+      </p>
+    </div>
+
+    <!-- Game Area -->
+    <div id="gameArea">
+      <!-- Background Stars -->
+      <div class="stars" id="starsContainer"></div>
+      
+      <!-- Game Tracks -->
+      <div id="leftTrack" class="track"></div>
+      <div id="centerTrack" class="track"></div>
+      <div id="rightTrack" class="track"></div>
+
+      <!-- Target Zones -->
+      <div class="targetZone leftTarget"></div>
+      <div class="targetZone centerTarget"></div>
+      <div class="targetZone rightTarget"></div>
+
+      <!-- Key Hints -->
+      <div id="leftKey" class="key-hint">A</div>
+      <div id="centerKey" class="key-hint">S</div>
+      <div id="rightKey" class="key-hint">D</div>
+
+      <!-- Game HUD -->
+      <div id="score">SCORE: <span id="scoreValue">0</span></div>
+      <div id="combo">COMBO: <span id="comboValue">0</span>x</div>
+      <div id="audioStatus"></div>
+
+      <!-- Touch Areas for Mobile -->
+      <div class="touch-area touch-left"></div>
+      <div class="touch-area touch-center"></div>
+      <div class="touch-area touch-right"></div>
+    </div>
+
+    <!-- End Screen -->
+    <div id="endScreen">
+      <h2>GAME OVER</h2>
+      <div id="finalScore">0</div>
+      <button id="restartButton" class="button">PLAY AGAIN</button>
+    </div>
+  </div>
+
+  <!-- Game Script -->
+  <script src="script.js" defer></script>
+</body>
+</html>
